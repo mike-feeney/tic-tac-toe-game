@@ -17,67 +17,25 @@ function newGame() {
 }
 
 function checkForWin() {
-    if (xSpaces.includes(1) && xSpaces.includes(2) && xSpaces.includes(3)) {
+    if ( (xSpaces.includes(1) && xSpaces.includes(2) && xSpaces.includes(3)) 
+        || (xSpaces.includes(4) && xSpaces.includes(5) && xSpaces.includes(6))
+        || (xSpaces.includes(7) && xSpaces.includes(8) && xSpaces.includes(9))
+        || (xSpaces.includes(1) && xSpaces.includes(4) && xSpaces.includes(7))
+        || (xSpaces.includes(2) && xSpaces.includes(5) && xSpaces.includes(8))
+        || (xSpaces.includes(3) && xSpaces.includes(6) && xSpaces.includes(9))
+        || (xSpaces.includes(1) && xSpaces.includes(5) && xSpaces.includes(9))
+        || (xSpaces.includes(7) && xSpaces.includes(5) && xSpaces.includes(3)) ) {
         document.querySelector('h2').innerText = 'X Wins!'
         document.querySelector('h1').innerText = 'New Game'
         document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(4) && xSpaces.includes(5) && xSpaces.includes(6)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(7) && xSpaces.includes(8) && xSpaces.includes(9)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(1) && xSpaces.includes(4) && xSpaces.includes(7)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(2) && xSpaces.includes(5) && xSpaces.includes(8)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(3) && xSpaces.includes(6) && xSpaces.includes(9)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(1) && xSpaces.includes(5) && xSpaces.includes(9)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (xSpaces.includes(7) && xSpaces.includes(5) && xSpaces.includes(3)) {
-        document.querySelector('h2').innerText = 'X Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(1) && oSpaces.includes(2) && oSpaces.includes(3)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(4) && oSpaces.includes(5) && oSpaces.includes(6)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(7) && oSpaces.includes(8) && oSpaces.includes(9)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(1) && oSpaces.includes(4) && oSpaces.includes(7)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(2) && oSpaces.includes(5) && oSpaces.includes(8)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(3) && oSpaces.includes(6) && oSpaces.includes(9)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(1) && oSpaces.includes(5) && oSpaces.includes(9)) {
-        document.querySelector('h2').innerText = 'O Wins!'
-        document.querySelector('h1').innerText = 'New Game'
-        document.querySelector('h1').addEventListener('click', newGame)
-    }else if (oSpaces.includes(7) && oSpaces.includes(5) && oSpaces.includes(3)) {
+    }else if ( (oSpaces.includes(1) && oSpaces.includes(2) && oSpaces.includes(3))
+              || (oSpaces.includes(4) && oSpaces.includes(5) && oSpaces.includes(6))
+              || (oSpaces.includes(7) && oSpaces.includes(8) && oSpaces.includes(9))
+              || (oSpaces.includes(1) && oSpaces.includes(4) && oSpaces.includes(7))
+              || (oSpaces.includes(2) && oSpaces.includes(5) && oSpaces.includes(8))
+              || (oSpaces.includes(3) && oSpaces.includes(6) && oSpaces.includes(9))
+              || (oSpaces.includes(1) && oSpaces.includes(5) && oSpaces.includes(9))
+              || (oSpaces.includes(7) && oSpaces.includes(5) && oSpaces.includes(3)) ) {
         document.querySelector('h2').innerText = 'O Wins!'
         document.querySelector('h1').innerText = 'New Game'
         document.querySelector('h1').addEventListener('click', newGame)
@@ -87,7 +45,6 @@ function checkForWin() {
         document.querySelector('h1').addEventListener('click', newGame)
     }
 }
-
 
 function addMark1() {
     let turn = document.querySelector('h2').innerText
