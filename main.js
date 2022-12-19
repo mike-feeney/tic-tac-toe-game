@@ -1,21 +1,27 @@
-document.querySelector('#tile1').addEventListener('click', addMark1);
-document.querySelector('#tile2').addEventListener('click', addMark2);
-document.querySelector('#tile3').addEventListener('click', addMark3);
-document.querySelector('#tile4').addEventListener('click', addMark4);
-document.querySelector('#tile5').addEventListener('click', addMark5);
-document.querySelector('#tile5').addEventListener('click', addMark5);
-document.querySelector('#tile6').addEventListener('click', addMark6);
-document.querySelector('#tile7').addEventListener('click', addMark7);
-document.querySelector('#tile8').addEventListener('click', addMark8);
-document.querySelector('#tile9').addEventListener('click', addMark9);
+// Add the event listeners to the board tiles listening for player clicks.  9 space board grid numbered as follows
+// 1 2 3
+// 4 5 6
+// 7 8 9
+document.querySelector('#tile1').addEventListener('click', addMark.bind(null,1));
+document.querySelector('#tile2').addEventListener('click', addMark.bind(null,2));
+document.querySelector('#tile3').addEventListener('click', addMark.bind(null,3));
+document.querySelector('#tile4').addEventListener('click', addMark.bind(null,4));
+document.querySelector('#tile5').addEventListener('click', addMark.bind(null,5));
+document.querySelector('#tile6').addEventListener('click', addMark.bind(null,6));
+document.querySelector('#tile7').addEventListener('click', addMark.bind(null,7));
+document.querySelector('#tile8').addEventListener('click', addMark.bind(null,8));
+document.querySelector('#tile9').addEventListener('click', addMark.bind(null,9));
 
+// Arrays track which spaces each player controls
 let xSpaces = [];
 let oSpaces = [];
 
+// Function to reload page when game is completed so players can play again.
 function newGame() {
     document.location.reload(true)
 }
 
+// Checks the spaces each player controls after each turn to see if an win has been acheived
 function checkForWin() {
     if ( (xSpaces.includes(1) && xSpaces.includes(2) && xSpaces.includes(3)) 
         || (xSpaces.includes(4) && xSpaces.includes(5) && xSpaces.includes(6))
@@ -46,226 +52,25 @@ function checkForWin() {
     }
 }
 
-function addMark1() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark1').innerText
+// Marks tiles on player clicks and adds that tile to the array of spaces the player controls, then checks to see if player has won
+function addMark(tileNum) {
+    let turn = document.querySelector('h2').innerText;
+    let mark = document.querySelector(`#mark${tileNum}`).innerText;
 
     if (turn === "X's Turn") {
         if (mark === "") {
-            document.querySelector('#mark1').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(1);
+            document.querySelector(`#mark${tileNum}`).innerText = 'X';
+            document.querySelector('h2').innerText = "O's Turn";
+            xSpaces.push(tileNum);
         }
-        
     }
 
     if (turn === "O's Turn") {
         if (mark === "") {
-            document.querySelector('#mark1').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(1);
+            document.querySelector(`#mark${tileNum}`).innerText = 'O';
+            document.querySelector('h2').innerText = "X's Turn";
+            oSpaces.push(tileNum);
         }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark2() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark2').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark2').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(2);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark2').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(2);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark3() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark3').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark3').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(3);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark3').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(3);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark4() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark4').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark4').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(4);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark4').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(4);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark5() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark5').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark5').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(5);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark5').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(5);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark6() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark6').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark6').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(6);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark6').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(6);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark7() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark7').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark7').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(7);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark7').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(7);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark8() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark8').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark8').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(8);
-        }
-        
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark8').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(8);
-        }
-        
-    }
-
-    checkForWin();
-}
-
-function addMark9() {
-    let turn = document.querySelector('h2').innerText
-    let mark = document.querySelector('#mark9').innerText
-
-    if (turn === "X's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark9').innerText = 'X'
-            document.querySelector('h2').innerText = "O's Turn"
-            xSpaces.push(9);
-        }
- 
-    }
-
-    if (turn === "O's Turn") {
-        if (mark === "") {
-            document.querySelector('#mark9').innerText = 'O'
-            document.querySelector('h2').innerText = "X's Turn"
-            oSpaces.push(9);
-        }
-       
     }
 
     checkForWin();
