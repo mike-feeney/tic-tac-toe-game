@@ -1,5 +1,7 @@
 # Tic-Tac-Toe-Game: <a href="https://mike-feeney.github.io/tic-tac-toe-game/" target="_blank">Play Here</a>
 
+![tic-tac-toe](https://user-images.githubusercontent.com/17114211/209020721-f14f3016-5604-4b1a-995b-76f137884a07.gif)
+
 A simple two player game of tic-tac-toe that can be played in the browser.
 
 ## Tech used: ![HTML5 BADGE](https://img.shields.io/static/v1?label=|&message=HTML5&color=23555f&style=plastic&logo=html5)![CSS BADGE](https://img.shields.io/static/v1?label=|&message=CSS3&color=285f65&style=plastic&logo=css3)![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)
